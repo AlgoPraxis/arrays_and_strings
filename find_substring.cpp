@@ -28,7 +28,6 @@ int main (int argc, char** argv)
       std::cerr << "Error opening file. Make sure 'input.txt' exists in the same directory." << std::endl;
       return 1;
     }
-       
     std::getline(inputFile, text);
     std::getline(inputFile, pattern);
     inputFile.close();
@@ -36,15 +35,6 @@ int main (int argc, char** argv)
   std::cout << "text = " << text << std::endl;
   std::cout << "pattern = " << pattern << std::endl;
 
-std::ifstream inputFile("input.txt");
-
-if (inputFile.is_open()) {
-    std::getline(inputFile, text);
-    std::getline(inputFile, pattern);
-    inputFile.close();
-} else {
-    std::cout << "Unable to open file" << std::endl;
-}
   // Populate the map with lower case alphabet and corresponding integer codes
   for (char ch = 'a'; ch <= 'z'; ch++) {
     alphabetMap[ch] = ch - 'a' + 1;
